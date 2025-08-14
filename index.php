@@ -1,3 +1,4 @@
+<?php include_once "./api/db.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,42 +114,62 @@
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <?php
+            $banners=$Banner->all(['sh'=>1]);
+            // dd($banners);
+            foreach($banners as $key => $value): 
+                $active=($key==0)?'active':'';
+            ?>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="<?=$key;?>" class="<?=$active;?>"></button>
+            <?php
+            endforeach;
+            ?>
+            <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button> -->
+            <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button> -->
         </div>
 
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./image/banner01.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            <?php
+            foreach($banners as $key => $value):
+                $active=($key==0)?'active':'';
+            ?>
+                <div class="carousel-item <?=$active;?>">
+                    <img src="./image/<?=$value['img'];?>" alt="<?=$value['alt'];?>" class="d-block" style="width:80%; margin: auto;">
+                </div>
+            <?php
+            endforeach;
+            ?>
+            <!-- <div class="carousel-item active">
+                <img src="./image/banner01.jpg" alt="banner01" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner02.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner02.jpg" alt="banner02" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner03.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner03.jpg" alt="banner03" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner04.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner04.jpg" alt="banner04" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner05.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner05.jpg" alt="banner05" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner06.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner06.jpg" alt="banner06" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner07.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+                <img src="./image/banner07.jpg" alt="banner07" class="d-block" style="width:80%; margin: auto;">
             </div>
             <div class="carousel-item">
-                <img src="./image/banner08.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
-            </div>
+                <img src="./image/banner08.jpg" alt="banner08" class="d-block" style="width:80%; margin: auto;">
+            </div> -->
         </div>
 
         <!-- Left and right controls/icons -->
@@ -162,6 +183,7 @@
     <!-- Carousel end -->
 
     <!-- container2：About -->
+    <?php $about=$About->find(['sh'=>1]);?>
     <div class="container mt-5 bd box2" id="box2">
         <div class="row">
             <div class="col text-center">
@@ -169,16 +191,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-sm-5">
-                <!-- <div class="box2"> -->
-                    <h3>從專注一杯茶開始，推廣茶飲的風格計劃</h3>
-                    <a href="about.html">About</a>
-                <!-- </div> -->
+            <div class="col-12 col-sm-6">
+                <h3><?=$about['text'];?></h3>
+                <a href="about.html">About</a>
             </div>
-            <div class="col-12 col-sm-7 text-end">
-                <!-- <div class="box2 text-end"> -->
-                    <img src="./image/about.png" style="height: 35%;">
-                <!-- </div> -->
+            <div class="col-12 col-sm-6 text-end">
+                <img src="./image/<?=$about['img'];?>" style="height: 35%;">
             </div>
         </div>
     </div>
@@ -194,7 +212,7 @@
         <div class="row">
             <div class="col mt-3">
                 <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/鮮芋雪冰.jpg" alt="Card image" style="width:100%">
+                    <img class="card-img-top" src="./image/drink-03.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">鮮芋雪冰</h4>
                         <p class="card-text">嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!</p>
@@ -205,7 +223,7 @@
 
             <div class="col mt-3">
                 <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/芒果冰沙.jpg" alt="Card image" style="width:100%">
+                    <img class="card-img-top" src="./image/drink-01.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">芒果冰沙</h4>
                         <p class="card-text">香濃芒果打成綿密冰沙，清涼消暑。</p>
@@ -216,7 +234,7 @@
 
             <div class="col mt-3">
                 <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/葡萄柚果粒茶.jpg" alt="Card image" style="width:100%">
+                    <img class="card-img-top" src="./image/drink-02.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">葡萄柚果粒茶</h4>
                         <p class="card-text">豐沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。</p>
