@@ -33,12 +33,51 @@
                 if(isset($_SESSION['login'])){
                     echo "<span class='text-white'> 哈囉 ";
                     echo $_SESSION['login'];
-                    echo " ~</span>";
-                }?>
-                <a type="button" class="btn btn-warning me-2" href="./api/logout.php">登出</a>
+                    echo " ~ </span>";
+                    echo "<a type='button' class='btn btn-outline-info me-2' href='./index.php'>回前台</a>";
+                    echo "<a type='button' class='btn btn-warning me-2' href='./api/logout.php'>登出</a>";
+                }else{
+                    echo "<button type='button' class='btn btn-outline-warning me-2' data-bs-toggle='modal' data-bs-target='#myModal-login'>登入</button>";
+                }
+                ?>
             </div>
         </div>
     </header>
+
+    <!-- The Modal (login) -->
+    <div class="modal fade" id="myModal-login">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">管理者登入</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <form action="./api/login.php" method="post">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="mb-3 mt-3">
+                            <label for="acc">帳號:</label>
+                            <input type="text" class="form-control" name="acc">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pw">密碼:</label>
+                            <input type="password" class="form-control" name="pw">
+                        </div>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">登入</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">
@@ -65,6 +104,11 @@
                                 帳號管理
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?do=footer">
+                                Footer管理
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -74,10 +118,14 @@
                     <?php 
                     $do = $_GET['do'];
                     $file = "./backend/${do}.php";
-                    if (file_exists($file)) {
-                        include $file;
+                    if(isset($_SESSION['login'])){
+                        if (file_exists($file)) {
+                            include $file;
+                        }else{
+                            include "./backend/banner.php";
+                        }
                     }else{
-                        include "./backend/banner.php";
+                        echo "<h1>請先登入</h1>";
                     }
                     ?>
 

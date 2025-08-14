@@ -126,6 +126,7 @@ $About=new DB('about');
 $Banner=new DB('banner');
 $Menu=new DB('menu');
 $Admin=new DB('admin');
+$Footer=new DB('footer');
 
 
 

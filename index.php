@@ -25,6 +25,10 @@
             border-radius: 15px;
             padding: 20px;
             /* 陰影 */
+            /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4); */
+        }
+        .bd:hover{
+            /* 陰影 */
             box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
         }
 
@@ -57,6 +61,10 @@
             padding: 20px;
             background-color: #bbb;
         }
+        #carouselBtnHover:hover{
+            border-radius: 50%;
+            border:1px solid #bbb;
+        }
     </style>
 </head>
 
@@ -85,13 +93,17 @@
                         <a class="nav-link" href="#box4">評價</a>
                     </li>
                 </ul>
-                <!-- <form class="d-flex"> -->
-                <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
-                <!-- <button class="btn btn-outline-warning" type="button">登入</button> -->
-                <!-- </form> -->
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#myModal-login">登入</button>
-                    <!-- <button type="button" class="btn btn-warning">註冊</button> -->
+                    <?php
+                    if(isset($_SESSION['login'])){
+                        echo "<span class='text-white'> 哈囉 ";
+                        echo $_SESSION['login'];
+                        echo " ~</span>";
+                        echo "<a type='button' class='btn btn-outline-info me-2' href='./backend.php?do=banner'>回後台</a>";
+                    }else{
+                        echo "<button type='button' class='btn btn-outline-warning me-2' data-bs-toggle='modal' data-bs-target='#myModal-login'>登入</button>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -135,7 +147,7 @@
 
     <!-- container1：banner -->
     <!-- Carousel -->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div id="demo" class="carousel slide bg-dark" data-bs-ride="carousel" data-bs-interval="4000">
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
@@ -167,10 +179,10 @@
 
         <!-- Left and right controls/icons -->
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+            <span class="carousel-control-prev-icon" id="carouselBtnHover"></span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
+            <span class="carousel-control-next-icon" id="carouselBtnHover"></span>
         </button>
     </div>
     <!-- Carousel end -->
@@ -214,7 +226,7 @@
                         <div class="card-body">
                             <h4 class="card-title"><?=$value['name'];?></h4>
                             <p class="card-text"><?=$value['description'];?></p>
-                            <a href="#" class="btn btn-primary">$<?=$value['price'];?></a>
+                            <a href="https://order.nidin.shop/menu/21975" target="_blank" class="btn btn-primary">$<?=$value['price'];?></a>
                         </div>
                     </div>
                 </div>
@@ -228,7 +240,7 @@
     <!-- container3 end -->
 
 
-    <!-- container4 ： alert -->
+    <!-- container4 ： 評價 -->
     <div class="container mt-5 box4 bd" id="box4">
         <div class="row">
             <div class="col text-center">
@@ -314,7 +326,11 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <p class="text-center text-muted mb-0">&copy; footer</p>
+                    <p class="text-center text-muted mb-0">
+                        <?php
+                        echo $Footer->find(1)['text'];
+                        ?>
+                    </p>
 
                 </div>
             </div>
