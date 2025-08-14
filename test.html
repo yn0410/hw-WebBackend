@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業</title>
+    <!-- 載入bs5 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 載入font-awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            /* background: linear-gradient(to bottom, #fddb92, #d1fdff); */
+            /* background: linear-gradient(to bottom, #ace0f9, #fff1eb); */
+            background: linear-gradient(to bottom, #70e1f5, #ffd194);
+        }
+
+        .bd {
+            /* 框線 */
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 20px;
+            /* 陰影 */
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .box1 {
+            width: 35%;
+            height: 45vh;
+            /* background-color: #82e4df88; */
+            margin: auto;
+            /* overflow-y: auto 可以在需要時出現捲動條 */
+            overflow-y: auto;
+        }
+
+        .box2 {
+            width: 100%;
+            height: 45vh;
+            /* background-color: lightpink; */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .bg-tiffany {
+            background-color: #81D8D0;
+        }
+
+        .bg-tiffany:hover {
+            background-color: #71cac1;
+        }
+
+        .box7 {
+            width: 100%;
+        }
+
+        .box8 {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- logo -->
+            <a class="navbar-brand" href="javascript:void(0)">
+                <i class="fa-solid fa-utensils fa-rotate-by" style="color: #FFD43B; --fa-rotate-angle: 315deg;"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box2">📍地圖</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box7">7</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box8">8</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-warning" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- NavBar end -->
+
+
+    <!-- container1 -->
+    <!-- container1 end -->
+
+    <!-- container2 -->
+    <div class="container mt-5" id="box2">
+        <div class="row bd">
+            <div class="col-12 col-sm-5">
+                <div class="box2">
+                    <h3>📍勞動部勞動力發展署北基宜花金馬分署泰山職業訓練場 位置：</h3>
+                </div>
+            </div>
+            <div class="col-12 col-sm-7">
+                <div class="box2 text-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7036499832957!2d121.41693531158565!3d25.04412927771732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1751434158758!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container2 end -->
+
+    <!-- container3 -->
+    <!-- container3 end -->
+
+
+    <!-- container4 ： alert -->
+    <!-- container4 end -->
+
+    <!-- container5 ： Progress Bar -->        
+    <!-- container5 end -->
+
+    <!-- container6 ： Pagination(分頁)與Breadcrumbs(麵包屑) -->
+    <!-- container6 end -->
+
+    <!-- container7 ： Card -->
+    <div class="container mt-5 box7 bd" id="box7">
+        <div class="row">
+            <div class="col">
+                <h2>Card</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="https://picsum.photos/id/13/400/300" alt="Card image"
+                        style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa-solid fa-user"></i>&nbsp;John Doe</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="https://picsum.photos/id/13/400/300" alt="Card image"
+                        style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title text-danger"><i class="fa-solid fa-user"></i>&nbsp;John Doe</h4>
+                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                        </p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="https://picsum.photos/id/17/400/300" alt="Card image"
+                        style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa-solid fa-user"></i>&nbsp;Jane Doe</h4>
+                        <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer
+                        </p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- container7 end -->
+
+    <!-- container8 ： Modal -->
+    <div class="container mt-5 box8 bd" id="box8">
+        <div class="row">
+            <div class="col">
+                <h2>Modal</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-1">
+                    Open modal 1
+                </button>
+
+            </div>
+        </div>
+
+        <div class="row mt-3 text-center">
+            <div class="col">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal-2">
+                    Open modal 2
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal 1 -->
+    <div class="modal" id="myModal-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading 1</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal 1 body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 其他modal屬性(?):(淡入) / Large / 置中 / 內容可捲動的 -->
+    <!-- The Modal 2 -->
+    <div class="modal fade" id="myModal-2">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Modal Heading 2</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                    Modal 2 body..<br>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- container8 end -->
+
+    
+    <!-- footer -->
+    <footer class="bg-light mt-5">
+        <div class="container p-4">
+            <p class="text-center text-muted mb-0">&copy; footer</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+
+    <!-- 載入bs5 bundle js (有bundle才是完整版) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            
+        });
+    </script>
+</body>
+
+</html>

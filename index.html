@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koko</title>
+    <!-- 載入bs5 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 載入font-awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: linear-gradient(to bottom, #70e1f5, #ffd194);
+        }
+
+        .bd {
+            /* 框線 */
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 20px;
+            /* 陰影 */
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .box2 {
+            width: 100%;
+            height: 45vh;
+            /* background-color: lightpink; */
+        }
+
+        .box7 {
+            width: 100%;
+        }
+
+        .box8 {
+            width: 100%;
+        }
+        h4{
+            text-align: center;
+            font-weight: bold;
+        }
+        .card{
+            text-align: center;
+        }
+        .comment{
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- logo -->
+            <a class="navbar-brand" href="">
+                <!-- front awesome -->
+                <i class="fa-solid fa-crown fa-rotate-by" style="color: #FFD43B; --fa-rotate-angle: 315deg;"></i>
+                Koko
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box2">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box3">菜單</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box4">評價</a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex"> -->
+                    <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+                    <!-- <button class="btn btn-outline-warning" type="button">登入</button> -->
+                <!-- </form> -->
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">登入</button>
+                    <button type="button" class="btn btn-warning">註冊</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- NavBar end -->
+
+
+    <!-- container1：banner -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="./image/banner06.jpg" alt="banner">
+            </div>
+        </div>
+    </div> -->
+    <!-- container1 end -->
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./image/banner01.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner02.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner03.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner04.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner05.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner06.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner07.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="./image/banner08.jpg" alt="" class="d-block" style="width:80%; margin: auto;">
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <!-- Carousel end -->
+
+    <!-- container2：About -->
+    <div class="container mt-5" id="box2">
+        <div class="row bd">
+            <div class="col-12 col-sm-5">
+                <div class="box2">
+                    <h3>A new project starts with a cup of drink</h3>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-7">
+                <div class="box2 text-center">
+                    <img src="./image/about.png" style=" height: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container2 end -->
+
+    <!-- container3：Drinks -->
+    <div class="container mt-5 box3 bd" id="box3">
+        <div class="row">
+            <div class="col text-center">
+                <h2>菜單</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="./image/鮮芋雪冰.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">鮮芋雪冰</h4>
+                        <p class="card-text">嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="./image/芒果冰沙.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">芒果冰沙</h4>
+                        <p class="card-text">香濃芒果打成綿密冰沙，清涼消暑。</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="./image/葡萄柚果粒茶.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">葡萄柚果粒茶</h4>
+                        <p class="card-text">豐沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- container3 end -->
+
+
+    <!-- container4 ： alert -->
+    <div class="container mt-5 box4 bd" id="box4">
+        <div class="row">
+            <div class="col text-center">
+                <h2>評價</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="comment">
+                    <h5>小明</h5>
+                    <p>「鮮芋雪冰，好喝」</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="comment">
+                    <h5>小美</h5>
+                    <p>「芒果冰沙，好喝!」</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="comment">
+                    <h5>小王</h5>
+                    <p>「葡萄柚果粒茶，好喝!!」</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container4 end -->
+
+
+    <!-- footer -->
+    <footer class="bg-light mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col text-center">
+                    <!-- Section: Social Media -->
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                        
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                        
+                        <!-- Google -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+                        
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                        
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        <!-- Github -->
+                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+                   
+                    <!--End of Section: Social media -->
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <p class="text-center text-muted mb-0">&copy; footer</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+
+    <!-- 載入bs5 bundle js (有bundle才是完整版) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+</body>
+
+</html>
