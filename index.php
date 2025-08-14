@@ -40,18 +40,21 @@
         .box8 {
             width: 100%;
         }
-        h4{
+
+        h4 {
             text-align: center;
             font-weight: bold;
         }
-        .card{
+
+        .card {
             text-align: center;
         }
-        .comment{
+
+        .comment {
             border: 1px solid gray;
             border-radius: 15px;
             padding: 20px;
-            background-color: lightgray;
+            background-color: #bbb;
         }
     </style>
 </head>
@@ -82,8 +85,8 @@
                     </li>
                 </ul>
                 <!-- <form class="d-flex"> -->
-                    <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
-                    <!-- <button class="btn btn-outline-warning" type="button">登入</button> -->
+                <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+                <!-- <button class="btn btn-outline-warning" type="button">登入</button> -->
                 <!-- </form> -->
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light me-2">登入</button>
@@ -159,18 +162,23 @@
     <!-- Carousel end -->
 
     <!-- container2：About -->
-    <div class="container mt-5" id="box2">
-        <div class="row bd">
-            <div class="col-12 col-sm-5">
-                <div class="box2">
-                    <h3>A new project starts with a cup of drink</h3>
-                    <a href="about.html">About</a>
-                </div>
+    <div class="container mt-5 bd box2" id="box2">
+        <div class="row">
+            <div class="col text-center">
+                <h2>關於我們</h2>
             </div>
-            <div class="col-12 col-sm-7">
-                <div class="box2 text-center">
-                    <img src="./image/about.png" style=" height: 100%;">
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-5">
+                <!-- <div class="box2"> -->
+                    <h3>從專注一杯茶開始，推廣茶飲的風格計劃</h3>
+                    <a href="about.html">About</a>
+                <!-- </div> -->
+            </div>
+            <div class="col-12 col-sm-7 text-end">
+                <!-- <div class="box2 text-end"> -->
+                    <img src="./image/about.png" style="height: 35%;">
+                <!-- </div> -->
             </div>
         </div>
     </div>
@@ -233,18 +241,38 @@
             <div class="col">
                 <div class="comment">
                     <h5>小明</h5>
+                    <p>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                    </p>
                     <p>「鮮芋雪冰，好喝」</p>
                 </div>
             </div>
             <div class="col">
                 <div class="comment">
                     <h5>小美</h5>
+                    <p>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                    </p>
                     <p>「芒果冰沙，好喝!」</p>
                 </div>
             </div>
             <div class="col">
                 <div class="comment">
                     <h5>小王</h5>
+                    <p>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        <i class="fa-solid fa-star" style="color: yellow;"></i>
+                    </p>
                     <p>「葡萄柚果粒茶，好喝!!」</p>
                 </div>
             </div>
@@ -259,24 +287,30 @@
             <div class="row">
                 <div class="col text-center">
                     <!-- Section: Social Media -->
-                        <!-- Facebook -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-                        
-                        <!-- Twitter -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-                        
-                        <!-- Google -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-                        
-                        <!-- Instagram -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-                        
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-                        
-                        <!-- Github -->
-                        <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-                   
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-dark rounded-circle m-1" href="#!" role="button"><i
+                            class="fab fa-github"></i></a>
+
                     <!--End of Section: Social media -->
                 </div>
             </div>
