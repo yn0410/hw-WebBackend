@@ -1,4 +1,7 @@
-<?php include_once "./api/db.php";?>
+<?php
+include_once "./api/db.php";
+$do = $_GET['do'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +19,100 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom styles for this template -->
     <link href="./css/dashboard.css" rel="stylesheet">
+    <style>
+        /* Navbar */
+        .navbar {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .navbar-brand {
+            font-size: 1.2rem;
+        }
+        .navbar .btn {
+            transition: all 0.3s ease;
+        }
+        .navbar .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+        .sidebar .nav-link {
+            font-size: 1rem;
+            padding: 12px 20px;
+            color: #333;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin: 4px 8px;
+        }
+        .sidebar .nav-link:hover {
+            background: linear-gradient(to right, #f8f9fa, #3a8adaff);
+            transform: translateX(3px);
+        }
+        .sidebar .nav-link.active,
+        .sidebar .nav-link[aria-current="page"] {
+            background: #2c66a1ff;
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        /* Main content area */
+        main {
+            padding-top: 20px;
+        }
+
+        /* Modal beautify */
+        .modal-content {
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+        .modal-header {
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .modal-title {
+            font-weight: bold;
+        }
+        .modal-footer .btn {
+            transition: all 0.3s ease;
+        }
+        .modal-footer .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Table inside backend */
+        table {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        table thead {
+            background-color: #f1f3f5;
+        }
+        table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Scrollbar style (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -85,27 +182,27 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="?do=banner">
+                            <a class="nav-link" <?=($do=='banner')?'aria-current="page"':'';?> href="?do=banner">
                                 Banner管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?do=about">
+                            <a class="nav-link" <?=($do=='about')?'aria-current="page"':'';?> href="?do=about">
                                 About管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?do=menu">
+                            <a class="nav-link" <?=($do=='menu')?'aria-current="page"':'';?> href="?do=menu">
                                 菜單管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?do=admin">
+                            <a class="nav-link" <?=($do=='admin')?'aria-current="page"':'';?> href="?do=admin">
                                 帳號管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?do=footer">
+                            <a class="nav-link" <?=($do=='footer')?'aria-current="page"':'';?> href="?do=footer">
                                 Footer管理
                             </a>
                         </li>
@@ -116,7 +213,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 
                     <?php 
-                    $do = $_GET['do'];
+                    // $do = $_GET['do'];
                     $file = "./backend/${do}.php";
                     if(isset($_SESSION['login'])){
                         if (file_exists($file)) {

@@ -17,54 +17,88 @@
     <style>
         body {
             background: linear-gradient(to bottom, #70e1f5, #ffd194);
+            font-family: 'Segoe UI', sans-serif;
+            transition: background 0.5s ease;
         }
 
         .bd {
-            /* 框線 */
-            border: 1px solid gray;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             padding: 20px;
-            /* 陰影 */
-            /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4); */
+            transition: all 0.3s ease;
         }
-        .bd:hover{
-            /* 陰影 */
-            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        .box2 {
-            width: 100%;
-            height: 45vh;
-            /* background-color: lightpink; */
-        }
-
-        .box7 {
-            width: 100%;
-        }
-
-        .box8 {
-            width: 100%;
-        }
-
-        h4 {
-            text-align: center;
-            font-weight: bold;
+        .bd:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            transform: translateY(-3px);
         }
 
         .card {
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        }
+        .card-img-top {
+            transition: transform 0.3s ease;
+        }
+        .card:hover{
+            transform: scale(1.05);
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
 
         .comment {
-            border: 1px solid gray;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             padding: 20px;
-            background-color: #bbb;
+            background-color: #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        #carouselBtnHover:hover{
+        .comment:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        #carouselBtnHover {
+            transition: all 0.3s ease;
+        }
+        #carouselBtnHover:hover {
             border-radius: 50%;
-            border:1px solid #bbb;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.3);
         }
+
+        .carousel-inner img {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-item.active img {
+            opacity: 1;
+        }
+        .carousel-item img {
+            opacity: 0.85;
+        }
+        .carousel-item:hover img {
+            opacity: 1;
+        }
+
+        footer .btn {
+            border-color: #333;
+            color: #333;
+        }
+        footer .btn:hover {
+            background-color: #333;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 
@@ -84,10 +118,10 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#box2">關於我們</a>
+                        <a class="nav-link" href="#aboutUs">關於我們</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#box3">菜單</a>
+                        <a class="nav-link" href="#menu">菜單</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#box4">評價</a>
@@ -190,7 +224,7 @@
 
     <!-- container2：About -->
     <?php $about=$About->find(['sh'=>1]);?>
-    <div class="container mt-5 bd box2" id="box2">
+    <div class="container mt-5 bd box2" id="aboutUs">
         <div class="row">
             <div class="col text-center">
                 <h2>關於我們</h2>
@@ -209,7 +243,7 @@
     <!-- container2 end -->
 
     <!-- container3：Drinks -->
-    <div class="container mt-5 box3 bd" id="box3">
+    <div class="container mt-5 box3 bd" id="menu">
         <div class="row">
             <div class="col text-center">
                 <h2>菜單</h2>

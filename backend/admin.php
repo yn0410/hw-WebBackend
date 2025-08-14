@@ -23,7 +23,15 @@
                         <input type="text" name="pw[]" value="<?= $row['pw']?>" style="width: 90%;">
                     </td>
                     <td>
-                        <input type="checkbox" name="del[]" value="<?= $row['id'];?>">
+                        <?php
+                        if($_SESSION['login']=='admin'){
+                        ?>
+                            <input type="checkbox" name="del[]" value="<?= $row['id'];?>">
+                        <?php
+                        }else{
+                            echo "無刪除權限!";
+                        }
+                        ?>
                     </td>
                 </tr>
                     <input type="hidden" name="id[]" value="<?= $row['id'];?>">
