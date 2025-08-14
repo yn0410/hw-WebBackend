@@ -4,7 +4,7 @@
     <form method="post" action="./api/edit.php">
         <table class="table">
             <thead>
-                <tr class="yel">
+                <tr>
                     <td width="40%">帳號</td>
                     <td width="40%">密碼</td>
                     <td width="10%">刪除</td>

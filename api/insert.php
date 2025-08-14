@@ -3,7 +3,7 @@
 include_once "db.php";
 
 if(!empty($_FILES['img']['tmp_name'])){
-    move_uploaded_file($_FILES['img']['tmp_name'],"../images/".$_FILES['img']['name']);
+    move_uploaded_file($_FILES['img']['tmp_name'],"../image/".$_FILES['img']['name']);
     $_POST['img']=$_FILES['img']['name'];
 }
 
@@ -12,6 +12,7 @@ $db=${ucfirst($table)};
 
 switch($table){
     case 'title':
+    case 'about':
         $_POST['sh']=0; //預設為都不顯示
         break;
     case 'admin':
