@@ -90,25 +90,50 @@
                 <!-- <button class="btn btn-outline-warning" type="button">登入</button> -->
                 <!-- </form> -->
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">登入</button>
-                    <button type="button" class="btn btn-warning">註冊</button>
+                    <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#myModal-login">登入</button>
+                    <!-- <button type="button" class="btn btn-warning">註冊</button> -->
                 </div>
             </div>
         </div>
     </nav>
     <!-- NavBar end -->
+    
+    <!-- The Modal (login) -->
+    <div class="modal fade" id="myModal-login">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">管理者登入</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-    <!-- container1：banner -->
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <img src="./image/banner06.jpg" alt="banner">
+                <form action="./api/login.php" method="post">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="mb-3 mt-3">
+                            <label for="acc">帳號:</label>
+                            <input type="text" class="form-control" name="acc">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pw">密碼:</label>
+                            <input type="password" class="form-control" name="pw">
+                        </div>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">登入</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </form>
+
             </div>
         </div>
-    </div> -->
-    <!-- container1 end -->
+    </div>
 
+    <!-- container1：banner -->
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
 
@@ -124,14 +149,6 @@
             <?php
             endforeach;
             ?>
-            <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button> -->
-            <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button> -->
         </div>
 
         <!-- The slideshow/carousel -->
@@ -146,30 +163,6 @@
             <?php
             endforeach;
             ?>
-            <!-- <div class="carousel-item active">
-                <img src="./image/banner01.jpg" alt="banner01" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner02.jpg" alt="banner02" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner03.jpg" alt="banner03" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner04.jpg" alt="banner04" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner05.jpg" alt="banner05" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner06.jpg" alt="banner06" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner07.jpg" alt="banner07" class="d-block" style="width:80%; margin: auto;">
-            </div>
-            <div class="carousel-item">
-                <img src="./image/banner08.jpg" alt="banner08" class="d-block" style="width:80%; margin: auto;">
-            </div> -->
         </div>
 
         <!-- Left and right controls/icons -->
@@ -181,6 +174,7 @@
         </button>
     </div>
     <!-- Carousel end -->
+    <!-- container1 end -->
 
     <!-- container2：About -->
     <?php $about=$About->find(['sh'=>1]);?>
@@ -210,38 +204,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="col mt-3">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/drink-03.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">鮮芋雪冰</h4>
-                        <p class="card-text">嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
+            <?php 
+            $menu=$Menu->all(['sh'=>1]);
+            foreach($menu as $key => $value):
+            ?>
+                <div class="col-4 mt-3">
+                    <div class="card">
+                        <img class="card-img-top" src="./image/<?=$value['img'];?>" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title"><?=$value['name'];?></h4>
+                            <p class="card-text"><?=$value['description'];?></p>
+                            <a href="#" class="btn btn-primary">$<?=$value['price'];?></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col mt-3">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/drink-01.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">芒果冰沙</h4>
-                        <p class="card-text">香濃芒果打成綿密冰沙，清涼消暑。</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mt-3">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="./image/drink-02.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">葡萄柚果粒茶</h4>
-                        <p class="card-text">豐沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+            endforeach;
+            ?>
         </div>
 
     </div>

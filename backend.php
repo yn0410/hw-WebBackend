@@ -1,3 +1,4 @@
+<?php include_once "./api/db.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,13 @@
         <span class="form-control bg-dark w-100"></span>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <button type="button" class="btn btn-warning me-2">登出</button>
+                <?php
+                if(isset($_SESSION['login'])){
+                    echo "<span class='text-white'> 哈囉 ";
+                    echo $_SESSION['login'];
+                    echo " ~</span>";
+                }?>
+                <a type="button" class="btn btn-warning me-2" href="./api/logout.php">登出</a>
             </div>
         </div>
     </header>
@@ -39,23 +46,23 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">
-                                管理1
+                            <a class="nav-link" aria-current="page" href="?do=banner">
+                                Banner管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                管理2
+                            <a class="nav-link" href="?do=about">
+                                About管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                管理3
+                            <a class="nav-link" href="?do=menu">
+                                菜單管理
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                管理4
+                            <a class="nav-link" href="?do=admin">
+                                帳號管理
                             </a>
                         </li>
                     </ul>
@@ -63,14 +70,17 @@
             </nav>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-                    <h1>Main</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                            新增項目
-                        </button>
-                    </div>
-                </div>
+                
+                    <?php 
+                    $do = $_GET['do'];
+                    $file = "./backend/${do}.php";
+                    if (file_exists($file)) {
+                        include $file;
+                    }else{
+                        include "./backend/banner.php";
+                    }
+                    ?>
+
             </main>
         </div>
     </div>
