@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-08-15 01:10:13
+-- 產生時間： 2025-08-15 04:43:49
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -39,10 +39,10 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `text`, `img`, `sh`) VALUES
-(1, '從專注一杯茶開始，推廣茶飲的風格計劃', 'about-01.png', 0),
-(3, 'dddddd', 'banner02.jpg', 0),
-(7, '121212121', 'banner01.jpg', 0),
-(8, 'vefwed', 'banner08.jpg', 1);
+(1, '從專注一杯茶開始，推廣茶飲的風格計劃', 'about-01.png', 1),
+(7, '121212121', 'banner06.jpg', 0),
+(8, 'vefwed', 'banner08.jpg', 0),
+(9, '卓越科技大學', 'banner04.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -62,8 +62,8 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
 (1, 'admin', '1234'),
-(3, 'root', '22345'),
-(4, 'test', '1234');
+(3, 'root', '223456'),
+(7, 'test', '1234');
 
 -- --------------------------------------------------------
 
@@ -83,11 +83,11 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `img`, `alt`, `sh`) VALUES
-(1, 'banner01.jpg', 'banner01', 1),
+(1, 'banner01.jpg', 'banner012222', 1),
 (2, 'banner02.jpg', 'banner02', 1),
 (3, 'banner03.jpg', 'banner03', 1),
-(4, 'banner04.jpg', 'banner04', 1),
-(6, 'banner02.jpg', 'banner05', 1);
+(6, 'banner06.jpg', 'banner066', 1),
+(9, 'banner08.jpg', 'banner08', 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,7 @@ CREATE TABLE `footer` (
 --
 
 INSERT INTO `footer` (`id`, `text`) VALUES
-(1, '© 20250815');
+(1, '© 20250815555555');
 
 -- --------------------------------------------------------
 
@@ -127,12 +127,11 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `name`, `img`, `description`, `price`, `sh`) VALUES
-(1, '鮮芋雪冰', 'drink-03.jpg', '嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!~~~', 90, 1),
+(1, '鮮芋雪冰', 'drink-03.jpg', '嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!~~~~~~~~~~!!!', 90, 1),
 (2, '芒果冰沙', 'drink-01.jpg', '香濃芒果打成綿密冰沙，清涼消暑。', 85, 1),
-(3, '葡萄柚果粒茶', 'drink-02.jpg', '豐沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。', 75, 1),
-(4, '22鮮芋雪冰', 'drink-03.jpg', '22嚴選台灣芋頭，融合牛乳快打綿密冰沙，飄飄芋鮮神級牛乳冰沙在這!心情過得去，什麼事情都過得去!', 90, 0),
+(3, '葡萄柚果粒茶', 'drink-02.jpg', '豐沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。', 70, 1),
 (6, '2222葡萄柚果粒茶', 'drink-02.jpg', '豐2222沛葡萄柚果肉搭配清香爽口的綠茶基底，柚香與茶韻的清爽結合，酸甜不澀，給你滿足的果粒感。', 75, 1),
-(8, '333葡萄柚果粒茶', 'drink-03.jpg', '333葡萄柚果粒茶333', 17, 1);
+(10, '火腿蛋餅', 'drink-01.jpg', '香濃芒果打成綿密冰沙，清涼消暑。香濃芒果打成綿密冰沙，清涼消暑。香濃芒果打成綿密冰沙，清涼消暑。香濃芒果打成綿密冰沙，清涼消暑。', 456, 1);
 
 --
 -- 已傾印資料表的索引
@@ -176,19 +175,19 @@ ALTER TABLE `menu`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `footer`
@@ -200,7 +199,7 @@ ALTER TABLE `footer`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
