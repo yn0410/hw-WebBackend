@@ -99,6 +99,10 @@
             transform: scale(1.1);
         }
 
+        #aboutUs{
+            height: 450px;
+        }
+
     </style>
 </head>
 
