@@ -19,13 +19,17 @@ foreach($_POST['id'] as $key => $id){
                 $row['acc']=$_POST['acc'][$key];
                 $row['pw']=$_POST['pw'][$key];
                 break;
+            case 'banner':
+                $row['alt']=$_POST['alt'][$key];
+                $row['sh']=(isset($_POST['sh']) && in_array($id, $_POST['sh']))?1:0;
+                break;
             case 'menu':
                 $row['name']=$_POST['name'][$key];
                 $row['description']=$_POST['description'][$key];
                 $row['price']=$_POST['price'][$key];
                 $row['sh']=(isset($_POST['sh']) && in_array($id, $_POST['sh']))?1:0;
                 break;
-            default:
+            default: //about 
                 if(isset($row['text'])){
                     $row['text']=$_POST['text'][$key]; //改資料庫內容
                 }
